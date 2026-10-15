@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171714">
+  <meta name="description" content="HobbySphere — Find your people, share your passion, and bring your hobbies to life.">
+  <title>HobbySphere — Where Hobbies Come Alive</title>
+  <style>
+    :root {
+      --bg: #171714;
+      --panel: #22221e;
+      --text: #f7f4ed;
+      --muted: #b8b5ab;
+      --accent: #e78b69;
+      --green: #789b78;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 90%); margin: auto; }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #ffffff12;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+    .brand span { color: var(--accent); }
+    .nav-link { color: var(--muted); font-size: 14px; }
+
+    .hero {
+      padding: 90px 0 75px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid #e78b6955;
+      border-radius: 100px;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 850px;
+      margin: 25px auto 18px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.06;
+      letter-spacing: -3px;
+    }
+    h1 span { color: var(--accent); }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: transform .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .primary { background: var(--accent); color: #201610; }
+    .secondary { border: 1px solid #ffffff30; }
+
+    .preview {
+      margin: 15px auto 0;
+      max-width: 850px;
+      padding: 24px;
+      border: 1px solid #ffffff16;
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse at top, #e78b6918, transparent 65%),
+        var(--panel);
+    }
+    .preview-title {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      text-align: left;
+    }
+    .interest {
+      min-height: 145px;
+      padding: 20px;
+      border: 1px solid #ffffff12;
+      border-radius: 17px;
+      background: #ffffff05;
+    }
+    .emoji { font-size: 29px; }
+    .interest h3 { margin: 8px 0 3px; font-size: 17px; }
+    .interest p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    section.info { padding: 65px 0; }
+    .section-title {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: -1px;
+    }
+    .section-desc {
+      max-width: 600px;
+      margin: 0 auto 35px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .feature {
+      padding: 23px;
+      border: 1px solid #ffffff12;
+      border-radius: 18px;
+      background: var(--panel);
+    }
+    .feature h3 { margin: 10px 0 7px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .download {
+      margin: 35px auto 75px;
+      padding: 50px 24px;
+      border-radius: 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #35251e, #242c22);
+      border: 1px solid #ffffff12;
+    }
+    .download h2 { margin: 0 0 12px; font-size: 35px; }
+    .download p { color: var(--muted); margin-bottom: 25px; }
+    .notice { margin-top: 15px; font-size: 12px; color: var(--muted); }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid #ffffff12;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 650px) {
+      .hero { padding: 65px 0 45px; }
+      h1 { letter-spacing: -1.5px; }
+      .interests, .features { grid-template-columns: 1fr; }
+      .interest { min-height: auto; }
+      .preview { padding: 16px; }
+      .download h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#">Hobby<span>Sphere</span></a>
+      <a class="nav-link" href="#about">Discover the community ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="eyebrow">Your passion. Your people.</span>
+      <h1>Where Hobbies<br><span>Come Alive.</span></h1>
+      <p>
+        Discover communities built around what you love.
+        Share your projects, join challenges, and connect
+        with people who understand your passion.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#download">Get HobbySphere ↓</a>
+        <a class="button secondary" href="#about">Explore the vision</a>
+      </div>
+    </section>
+
+    <section class="container preview" id="about">
+      <p class="preview-title">A world of interests, one community.</p>
+      <div class="interests">
+        <article class="interest">
+          <div class="emoji">⌨️</div>
+          <h3>Mechanical Keyboards</h3>
+          <p>Build, customize, and share your setup.</p>
+        </article>
+        <article class="interest">
+          <div class="emoji">🌿</div>
+          <h3>Terrariums</h3>
+          <p>Grow miniature worlds with fellow creators.</p>
+        </article>
+        <article class="interest">
+          <div class="emoji">📷</div>
+          <h3>Photography</h3>
+          <p>Share your perspective and learn together.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="info container">
+      <h2 class="section-title">More than a feed.</h2>
+      <p class="section-desc">
+        HobbySphere is designed around participation,
+        creativity, and meaningful connections.
+      </p>
+      <div class="features">
+        <article class="feature">
+          <div class="emoji">🤝</div>
+          <h3>Find your people</h3>
+          <p>Join hobby-focused rooms and meet people who share your interests.</p>
+        </article>
+        <article class="feature">
+          <div class="emoji">🏆</div>
+          <h3>Take on challenges</h3>
+          <p>Turn ideas into projects, share progress, and celebrate achievements.</p>
+        </article>
+        <article class="feature">
+          <div class="emoji">💬</div>
+          <h3>Create together</h3>
+          <p>Exchange ideas, inspire others, and make your next project happen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container download" id="download">
+      <h2>Ready to find your sphere?</h2>
+      <p>Bring your interests to a community that gets you.</p>
+      <a class="button primary" href="#download" id="downloadButton">
+        Android version coming soon
+      </a>
+      <p class="notice">
+        The download link will be activated after the Android release is verified.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> HobbySphere. Where Hobbies Come Alive.</p>
+      <p>Built for people who love what they do.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
